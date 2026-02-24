@@ -1,5 +1,4 @@
 //Author Alexis Barrera
-
 //Personalized window for Rother Industries & Tecgnologies
 
 import { type CSSProperties } from 'react';
@@ -33,12 +32,12 @@ export const MyPersonalizedWindow = () => {
     return (
         <>
             <div>
-                <h1 className="text-center text-2xl font-bold">Bienvenido a Rother Industries & Technologies</h1>
+                <h1>Bienvenido a Rother Industries & Technologies</h1>
                 <p style={myStyles}>
                     Menú personalizado: {JSON.stringify(rotherMenuItems)}</p>
             </div>
             <div>
-                <h2 style={myStyles}>Carrito de compras</h2>
+                <h2 style={myStyles} data-testId="shopping-cart">Carrito de compras</h2>
 
                 {items.map(({ productName, quantity }) => (
                     <ItemCounter key={productName} name={productName} quantity={quantity} />
