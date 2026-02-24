@@ -33,9 +33,9 @@ interface ItemList {
 }
 
 const items: ItemList[] = [
-    { productName: "Dispositivos instalados", quantity: 6 },
-    { productName: "Dispositivos en mantenimiento", quantity: 2 },
-    { productName: "Dispositivos en stock", quantity: 100 },
+    { productName: "DISPOSITIVOS INSTALADOS", quantity: 6 },
+    { productName: "DISPOSITIVOS EN MANTENIMIENTO", quantity: 2 },
+    { productName: "DISPOSITIVOS EN STOCK", quantity: 100 },
 ];
 
 export const MyPersonalizedWindow = () => {
@@ -56,9 +56,11 @@ export const MyPersonalizedWindow = () => {
             <div>
                 <h2 style={myStyles} data-testId="shopping-cart">Carrito de compras</h2>
 
-                {items.map(({ productName, quantity }) => (
-                    <ItemCounter key={productName} name={productName} quantity={quantity} />
-                ))}
+                <div className='div2'>
+                    {items.map(({ productName, quantity }) => (
+                        <ItemCounter key={productName} name={productName} quantity={quantity} />
+                    ))}
+                </div>
 
                 {/* <ItemCounter name="Dispositivos instalados" quantity={6} />
                 <ItemCounter name="Dispositivos en mantenimiento" quantity={2} />
