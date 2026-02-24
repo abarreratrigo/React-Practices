@@ -4,18 +4,29 @@
 import { type CSSProperties } from 'react';
 import { ItemCounter } from './shopping-cart/ItemCounter';
 
+const FONT = "Arial";
+
 const rotherMenuItems = {
     name: "Rother Industries & Technologies",
     address: "Córdoba, Spain",
 }
 
 const myStyles: CSSProperties = {
-    backgroundColor: '#b4b4b4',
-    borderRadius: 20,
+    fontSize: 30,
+    fontFamily: FONT,
+    color: 'white',
+    backgroundColor: 'crimson',
+    textAlign: "center",
     padding: 12,
-    marginTop: 40,
+    marginTop: 20,
 }
 
+const styleP: CSSProperties = {
+    fontSize: 18,
+    fontFamily: FONT,
+    textAlign: 'center',
+    padding: 10
+}
 interface ItemList {
     productName: string;
     quantity: number;
@@ -32,9 +43,15 @@ export const MyPersonalizedWindow = () => {
     return (
         <>
             <div>
-                <h1>Bienvenido a Rother Industries & Technologies</h1>
-                <p style={myStyles}>
-                    Menú personalizado: {JSON.stringify(rotherMenuItems)}</p>
+                <h1 style={{
+                    textAlign: 'center',
+                    fontFamily: FONT,
+                    fontSize: 40,
+                    color: 'crimson'
+                }}
+                >Bienvenido a Rother Industries & Technologies</h1>
+                <p style={styleP}>
+                    Has iniciado sesión como: {JSON.stringify(rotherMenuItems)}</p>
             </div>
             <div>
                 <h2 style={myStyles} data-testId="shopping-cart">Carrito de compras</h2>
