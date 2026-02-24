@@ -1,0 +1,38 @@
+.item-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.item-name {
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    background-color: cadetblue;
+    border: 1px solid #0a7e8c;
+    padding: 1px 12px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.quantity {
+    color: blue;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+span {
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+}
