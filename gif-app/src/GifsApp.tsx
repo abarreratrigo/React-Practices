@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { mockGifs } from './mock-data/gifs.mock'
 import { CustomHeader } from './shared/components/CustomHeader'
 import { CustomSearchBar } from './shared/components/CustomSearchBar'
@@ -6,6 +6,13 @@ import { CustomPreviousSearches } from './gifs/components/CustomPreviousSearches
 import { GifsList } from './gifs/components/GifsList'
 
 export const GifsApp = () => {
+
+    const [previousSearches, setPreviousSearches] = useState(['spiderman'])
+
+    const handlePreviousSearchClick = (term: string) => {
+        console.log({term});
+        
+    }
     return (
         <>
             {/*Header*/}
@@ -16,7 +23,7 @@ export const GifsApp = () => {
             <CustomSearchBar placeholderText='Buscar GIFs'/>
 
             {/*Previous searches*/}
-            <CustomPreviousSearches searches={['Goku', 'Batman', 'Spiderman']}/>
+            <CustomPreviousSearches searches={previousSearches} onLabelClick={handlePreviousSearchClick}/>
 
             {/*Gifs*/}
             <GifsList gifs={mockGifs}/>
