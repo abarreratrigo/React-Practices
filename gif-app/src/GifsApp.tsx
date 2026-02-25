@@ -13,8 +13,18 @@ export const GifsApp = () => {
         console.log({term});
     }
 
-    const handleSearch = (query: string) => {
-        console.log(query);
+    const handleSearch = (query: string = '') => {
+
+        query = query.trim().toLowerCase();
+
+        //Validate query isn't null
+        if (query.length === 0) return;
+
+        //Evitate duplicates searches
+        if (previousSearches.includes(query)) return;
+
+        //Update previous searches (max. 8 elements)
+        setPreviousSearches([query, ...previousSearches].slice(0, 7));
     }
 
     return (
