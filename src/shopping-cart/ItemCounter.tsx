@@ -14,23 +14,25 @@ export const ItemCounter = ({ name, quantity = 1 }: ItemCounterProps) => {
     const [count, setCount] = useState(quantity);
 
     //Creamos las funciones para manejar los eventos de los botones
-    const handleAdd = () => {
-        setCount(count + 1);
+    const handleAdd = (add: number) => {
+        console.log("Hola");
+        
+        setCount(count + add);
     }
 
-    const handleSubtract = () => {
-        if (count === 1) return; // Evitamos que el contador sea 0
-        setCount(count - 1);
+    const handleSubtract = (substract: number) => {
+        if (count === 1 || count === 0) return; // Evitamos que el contador sea 0
+        setCount(count - substract);
     }
 
     return (
         <div className='item-container'>
-            <span className='item-name' style={{ color: count === 1 ? 'red' : 'black' }}>{name}</span>
-            <button onClick={handleAdd}>+1</button>
-            <button>+2</button>
+            <span className='item-name' style={{ color: count === 1 || count === 0 ? 'red' : 'black' }}>{name}</span>
+            <button onClick={() => handleAdd(1)}>+1</button>
+            <button onClick={() => handleAdd(2)}>+2</button>
             <span className='quantity'>{count}</span>
-            <button onClick={handleSubtract}>-1</button>
-            <button>-2</button>
+            <button onClick={() => handleSubtract(1)}>-1</button>
+            <button onClick={() => handleSubtract(2)}>-2</button>
         </div>
     )
 }

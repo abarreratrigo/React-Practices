@@ -1,0 +1,85 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ItemMapTest > Should match snapshot - item.map 1`] = `
+<div>
+  <div>
+    <div>
+      <h1
+        style="text-align: center; font-family: Arial; font-size: 40px; color: crimson;"
+      >
+        Bienvenido a Rother Industries & Technologies
+      </h1>
+      <p
+        class="prueba"
+        style="font-size: 18px; font-family: Arial; text-align: center; padding: 10px;"
+      >
+        Has iniciado sesión como: 
+        {"name":"Rother Industries & Technologies","address":"Córdoba, Spain"}
+      </p>
+    </div>
+    <div>
+      <h2
+        data-testid="devices-info"
+        style="font-size: 30px; font-family: Arial; color: white; background-color: crimson; text-align: center; padding: 12px; margin-top: 20px;"
+      >
+        Información de los dispositivos
+      </h2>
+      <div
+        class="div2"
+      >
+        <div
+          data-testid="ItemCounter"
+        />
+        <div
+          data-testid="ItemCounter"
+        />
+        <div
+          data-testid="ItemCounter"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyAwesomeApp > should match snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <h1
+        style="text-align: center; font-family: Arial; font-size: 40px; color: crimson;"
+      >
+        Bienvenido a Rother Industries & Technologies
+      </h1>
+      <p
+        class="prueba"
+        style="font-size: 18px; font-family: Arial; text-align: center; padding: 10px;"
+      >
+        Has iniciado sesión como: 
+        {"name":"Rother Industries & Technologies","address":"Córdoba, Spain"}
+      </p>
+    </div>
+    <div>
+      <h2
+        data-testid="devices-info"
+        style="font-size: 30px; font-family: Arial; color: white; background-color: crimson; text-align: center; padding: 12px; margin-top: 20px;"
+      >
+        Información de los dispositivos
+      </h2>
+      <div
+        class="div2"
+      >
+        <div
+          data-testid="ItemCounter"
+        />
+        <div
+          data-testid="ItemCounter"
+        />
+        <div
+          data-testid="ItemCounter"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

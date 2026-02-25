@@ -2,7 +2,7 @@
 //Personalized window for Rother Industries & Tecgnologies
 
 import { type CSSProperties } from 'react';
-import { ItemCounter } from './shopping-cart/ItemCounter';
+import { ItemCounter } from '../shopping-cart/ItemCounter';
 
 const FONT = "Arial";
 
@@ -41,7 +41,7 @@ const items: ItemList[] = [
 export const MyPersonalizedWindow = () => {
 
     return (
-        <>
+        <div>
             <div>
                 <h1 style={{
                     textAlign: 'center',
@@ -50,22 +50,18 @@ export const MyPersonalizedWindow = () => {
                     color: 'crimson'
                 }}
                 >Bienvenido a Rother Industries & Technologies</h1>
-                <p style={styleP}>
+                <p style={styleP} className='prueba'>
                     Has iniciado sesión como: {JSON.stringify(rotherMenuItems)}</p>
             </div>
             <div>
-                <h2 style={myStyles} data-testId="shopping-cart">Carrito de compras</h2>
+                <h2 style={myStyles} data-testid="devices-info">Información de los dispositivos</h2>
 
                 <div className='div2'>
                     {items.map(({ productName, quantity }) => (
                         <ItemCounter key={productName} name={productName} quantity={quantity} />
                     ))}
                 </div>
-
-                {/* <ItemCounter name="Dispositivos instalados" quantity={6} />
-                <ItemCounter name="Dispositivos en mantenimiento" quantity={2} />
-                <ItemCounter name="Dispositivos en stock" quantity={100} /> */}
             </div>
-        </>
+        </div>
     )
 }
