@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 interface CustomSearchBarProps{
   placeholderText?: string
@@ -13,6 +13,12 @@ export const CustomSearchBar = ({placeholderText = 'Buscar', onQuery}: CustomSea
     onQuery(query)
     setQuery('')
   }
+
+  const handleEnterKey = (event: React.KeyboardEvent<HTMLInputElement>) =>{
+     if (event.key === "Enter") {
+            handleSearch()
+          }
+  }
   
   return (
     <div className="search-container">
@@ -21,11 +27,7 @@ export const CustomSearchBar = ({placeholderText = 'Buscar', onQuery}: CustomSea
         value={query}
         onChange={(event) => setQuery(event.target.value)}
 
-        onKeyDown={(event) => {
-          if (event.key === "Enter") {
-            handleSearch()
-          }
-        }}
+        onKeyDown={handleEnterKey}
       />
       <button onClick={handleSearch}>Buscar</button>
     </div>

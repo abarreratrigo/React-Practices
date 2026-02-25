@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { mockGifs } from './mock-data/gifs.mock'
 import { CustomHeader } from './shared/components/CustomHeader'
 import { CustomSearchBar } from './shared/components/CustomSearchBar'
