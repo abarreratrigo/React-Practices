@@ -23,7 +23,8 @@ export const GifsApp = () => {
             <CustomSearchBar placeholderText='Buscar GIFs'/>
 
             {/*Previous searches*/}
-            <CustomPreviousSearches searches={previousSearches} onLabelClick={handlePreviousSearchClick}/>
+            <CustomPreviousSearches searches={previousSearches}
+                onLabelClick={handlePreviousSearchClick} />
 
             {/*Gifs*/}
             <GifsList gifs={mockGifs}/>

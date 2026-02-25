@@ -12,11 +12,9 @@ export const CustomPreviousSearches: FC<PreviousSearchesProps> = ({searches, onL
         <ul className='previous-searches-list'>
           {
             searches.map(term => (
-              <li key={term}
-                onClick={() => {
-                  onLabelClick(term)
-                }}
-              >{term}</li>
+              <li key={term} onClick={() => onLabelClick(term)}
+              >{term}
+              </li>
             ))
           }
         </ul>  
