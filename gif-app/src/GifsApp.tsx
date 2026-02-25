@@ -11,8 +11,12 @@ export const GifsApp = () => {
 
     const handlePreviousSearchClick = (term: string) => {
         console.log({term});
-        
     }
+
+    const handleSearch = (query: string) => {
+        console.log(query);
+    }
+
     return (
         <>
             {/*Header*/}
@@ -20,7 +24,8 @@ export const GifsApp = () => {
                 description="Descubre y comparte el Gif perfecto" />
 
             {/*SearchBar*/}
-            <CustomSearchBar placeholderText='Buscar GIFs'/>
+            <CustomSearchBar placeholderText='Buscar GIFs'
+                onQuery={handleSearch} />
 
             {/*Previous searches*/}
             <CustomPreviousSearches searches={previousSearches}
