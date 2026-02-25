@@ -24,6 +24,11 @@ export const GifsApp = () => {
                     <li>Spiderman</li>
                 </ul>
             </div>
+
+            {/*Gifs*/}
+            <div className="gifs-container">
+                
+            </div>
         </>
   )
 }
