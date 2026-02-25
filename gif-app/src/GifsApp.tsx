@@ -4,16 +4,17 @@ import { CustomHeader } from './shared/components/CustomHeader'
 import { CustomSearchBar } from './shared/components/CustomSearchBar'
 import { CustomPreviousSearches } from './gifs/components/CustomPreviousSearches'
 import { GifsList } from './gifs/components/GifsList'
+import { getGifsByQuery } from './gifs/actions/get-gifs-by-query.action'
 
 export const GifsApp = () => {
 
-    const [previousSearches, setPreviousSearches] = useState(['spiderman'])
+    const [previousSearches, setPreviousSearches] = useState([''])
 
     const handlePreviousSearchClick = (term: string) => {
         console.log({term});
     }
 
-    const handleSearch = (query: string = '') => {
+    const handleSearch = async(query: string = '') => {
 
         query = query.trim().toLowerCase();
 
@@ -25,6 +26,10 @@ export const GifsApp = () => {
 
         //Update previous searches (max. 8 elements)
         setPreviousSearches([query, ...previousSearches].slice(0, 7));
+
+        const gifs = await getGifsByQuery(query);
+
+        console.log({gifs});
     }
 
     return (
