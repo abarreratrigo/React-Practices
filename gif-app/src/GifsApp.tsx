@@ -2,7 +2,7 @@ import React from 'react'
 import { mockGifs } from './mock-data/gifs.mock'
 import { CustomHeader } from './shared/components/CustomHeader'
 import { CustomSearchBar } from './shared/components/CustomSearchBar'
-import { PreviousSearches } from './gifs/components/PreviousSearches'
+import { CustomPreviousSearches } from './gifs/components/CustomPreviousSearches'
 import { GifsList } from './gifs/components/GifsList'
 
 export const GifsApp = () => {
@@ -16,7 +16,7 @@ export const GifsApp = () => {
             <CustomSearchBar placeholderText='Buscar GIFs'/>
 
             {/*Previous searches*/}
-            <PreviousSearches/>
+            <CustomPreviousSearches searches={['Goku', 'Batman', 'Spiderman']}/>
 
             {/*Gifs*/}
             <GifsList gifs={mockGifs}/>
