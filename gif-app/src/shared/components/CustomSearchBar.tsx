@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface CustomSearchBarProps{
   placeholderText?: string
@@ -8,6 +8,18 @@ interface CustomSearchBarProps{
 export const CustomSearchBar = ({placeholderText = 'Buscar', onQuery}: CustomSearchBarProps) => {
   
   const [query, setQuery] = useState('')
+
+  useEffect(() => {
+    
+    const timeoutId = setTimeout(() => {
+      onQuery(query)
+    },700)
+
+    return () => {
+      clearTimeout(timeoutId)
+    };
+
+  }, [query, onQuery])
 
   const handleSearch = () => {
     onQuery(query)
@@ -26,8 +38,8 @@ export const CustomSearchBar = ({placeholderText = 'Buscar', onQuery}: CustomSea
         type="text" placeholder={placeholderText}
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-
         onKeyDown={handleEnterKey}
+
       />
       <button onClick={handleSearch}>Buscar</button>
     </div>
