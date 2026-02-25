@@ -1,10 +1,13 @@
-import React from 'react'
+import type { FC } from 'react'
 import type { Gif } from '../../mock-data/gifs.mock'
 
 interface GifsListProps{
     gifs: Gif[]
 }
-export const GifsList = ({gifs}: GifsListProps) => {
+
+//This time I've used a Functional Component in order to use the Props
+//that I've defined previously 
+export const GifsList: FC<GifsListProps> = ({gifs}) => {
     return (
       <div className="gifs-container">
         {
